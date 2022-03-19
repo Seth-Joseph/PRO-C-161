@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bowling</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>   
+    <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+    
+    <script src="./Throw.js"></script>
+  </head>
+  <body>
+    <a-scene id="scene">
+      
+      <!--Light-->
+      <a-entity light="type: ambient; "></a-entity>
+
+      <a-assets>        
+        <a-asset-item
+          id="pin"
+          src="./models/bowling_pin/scene.gltf"
+        ></a-asset-item>  
+      </a-assets>
+
+      <!--Camera-->
+      <a-entity
+        id="camera"
+        camera
+        position="0 2.5 15"
+        wasd-controls="wsAxis:1"
+      >
+
+      <a-entity
+        id="app-title"
+        position="0 0.8 -1"
+        text="font: exo2bold; align: center; width: 2; color: #fff; value: Virtual Bowling"
+      >
+      <a-entity
+        id="app-subtitle"
+        position="0 -0.1 0"
+        text="font: dejavu; align: center; width: 1; color: #fff; value: Use Arrow keys to align yourself \n X to Throw Ball"
+      ></a-entity>
+      </a-entity>
+
+      </a-entity>
+
+      <!--Balls-->
+      <a-entity balls ></a-entity>
+
+      <!--Ground-->
+      <a-plane
+        id="ground"
+        repeat="5 5"
+        position="0 1 0"
+        rotation="-90 0 0"
+        height="200"
+        width="200"
+        src="https://t4.ftcdn.net/jpg/02/85/77/63/360_F_285776347_Bbd3JlSgtsvWioH3m1SYXVf8QB7fmSbn.jpg"
+        static-body
+        visible="true"
+      >
+      </a-plane>
+
+      <!--Boxes-->
+      <a-entity id="pin1" position="1.5 1.5 -3.5" gltf-model="#pin" scale="5 4 4" dynamic-body></a-entity>
+      <a-entity id="pin2" position="0.5 1.5 -3.5" gltf-model="#pin" scale="5 4 4"  dynamic-body></a-entity>
+      <a-entity id="pin3" position="-0.5 1.5 -3.5" gltf-model="#pin" scale="5 4 4"  dynamic-body></a-entity>
+      <a-entity id="pin4" position="-1.5 1.5 -3.5" gltf-model="#pin" scale="5 4 4"  dynamic-body></a-entity>
+      
+      <a-entity id="pin5" position="1 1.5 -3" gltf-model="#pin" scale="5 4 4"  dynamic-body></a-entity>
+      <a-entity id="pin6" position="0 1.5 -3" gltf-model="#pin" scale="5 4 4"  dynamic-body></a-entity>
+      <a-entity id="pin7" position="-1 1.5 -3" gltf-model="#pin" scale="5 4 4"  dynamic-body></a-entity>
+      
+      <a-entity id="pin8" position="0.5 1.5 -2.5" gltf-model="#pin" scale="5 4 4" dynamic-body></a-entity>
+      <a-entity id="pin9" position="-0.5 1.5 -2.5" gltf-model="#pin" scale="5 4 4"  dynamic-body></a-entity>
+      
+      <a-entity id="pin10" position="0 1.5 -2" gltf-model="#pin"  scale="5 4 4" dynamic-body></a-entity>
+
+      <a-box id="wall1" position="-3 1.5 -5" rotation="0 90 0" color="black" depth="1" height="0.5" width="35"  static-body></a-box>
+
+      <a-box id="wall2" position="3 1.5 -5" rotation="0 90 0" color="black" depth="1" height="0.5" width="35"  static-body></a-box>
+
+    </a-scene>
+  </body>
+</html>
